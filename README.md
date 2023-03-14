@@ -103,7 +103,7 @@
 #### 로컬에서 개인 브랜치 생성하기
 
 local workspace에 'junespring(예시)' 라는 이름으로 브랜치 생성<br>
-<code> git branch junespring(예시) </code> "junespring"아라는 브랜치를 생성
+<code> git branch junespring(예시) </code> "junespring"이라는 브랜치를 생성
 
 clone으로 가져오면 원격 저장소가 알아서 등록이 될것이다.<br> 
 혹시나 하면 <code>git remote -v</code> 로 확인
