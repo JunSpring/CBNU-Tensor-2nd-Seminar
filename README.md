@@ -91,3 +91,45 @@
 ```
  git commit -m "Hello World"
 ```
+
+# Git 저장소 이용하는 방법
+
+#### 원격저장소 로컬에 가져오기
+
+<code> git clone [fork한 원격저장소주소] .</code>     
+. 을 안붙이면 algorithm-studying이라는 파일이 생성되면서, 그안에 폴더가 생긴다.(혹시 폴더를 생성해서 그 안에 내용을 넣고싶다면 . 을 붙여라<br>
+클론후 생성된 파일에 `자기이름` 로 파일생성   ->여기에 코드를 넣을꺼임
+
+#### 로컬에서 개인 브랜치 생성하기
+
+local workspace에 'kwonja(예시)' 라는 이름으로 브랜치 생성<br>
+<code> git branch kwonja(예시) </code> "권자"라는 브랜치를 생성
+
+clone으로 가져오면 원격 저장소가 알아서 등록이 될것이다.<br> 
+혹시나 하면 <code>git remote -v</code> 로 확인
+#### 로컬에서 브랜치 작업후 원격저장소에 반영하기(중요!)
+1. <code> **git checkout kwonja** </code> - master에서 kwonja 브랜치로 전환
+2. workspace(워킹트리)에서 작업
+3. <code> **git add "파일이름.cpp"**</code>
+4. <code> **git commit -m "message"**</code>
+5. <code> **git push origin kwonja** </code> - 원격저장소 kwonja 브랜치에 반영
+6. <code> **git checkout master** </code> - 브랜치 전환
+ (6번을 진행할때 폴더를 처음만들면, 브랜치가 바뀌면서, 폴더가 사라질것이다. 그런데 경로는 그대로 가지고 있어서 에러가 발생한다.(파일을 찾을수 없다고 뜸)<br>
+ <code>cd ..</code>를 통해 뒤로 돌아가면 원래 master 브랜치로 이동
+7. <code> **git merge kwonja** </code> - 최신화된 master에 kwonja 브랜치 작업 반영
+8. <code> **git push origin master** </code> - 원격저장소 master에 수정사항 반영
+9. PR규칙에 맞게 PR
+
+#### fork한 원격저장소 최신화
+
+로컬에서 작업하기전 원본 저장소에 내용이 변경되어있을수 있다.<br>
+우리가 작업하는건 cpp파일이라 서로 겹칠일이 없어, 충돌이 일어나진 않겠지만, 한 파일에 대해서 코드를 수정할때는 최신화되어 있지 않은 코드로 사용하게되면 PR과정에서 꼬이게된다.
+<br>
+<br>
+1. <code>git remote add upstream 원본저장소URL </code> 원본저장소는 보통 upstream 이라는 이름을 사용
+2. <code>git remote -v </code>   -잘 저장되었는지 확인 (1,2번작업은 한번만 해도된다)
+3. <code>git checkout master </code>   -원격저장소의 master 브랜치로 이동
+4. <code>git fetch upstream </code> -원본저장소의 내용을 불러옴
+5. <code>git merge upstream/master </code>  -원격저장소의 master 브랜치에 merge ->로컬에 최신화 된 데이터를 가져온다. (4,5번은 
+6. <code>git push origin master </code> -로컬에 가져온 최신화 데이터를 원격에 푸시
+## <br><br>
