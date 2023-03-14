@@ -118,7 +118,6 @@ clone으로 가져오면 원격 저장소가 알아서 등록이 될것이다.<b
  <code>cd ..</code>를 통해 뒤로 돌아가면 원래 master 브랜치로 이동
 7. <code> **git merge junespring** </code> - 최신화된 master에 junespring 브랜치 작업 반영
 8. <code> **git push origin master** </code> - 원격저장소 master에 수정사항 반영
-9. PR규칙에 맞게 PR
 
 #### fork한 원격저장소 최신화
 
