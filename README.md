@@ -97,26 +97,26 @@
 #### 원격저장소 로컬에 가져오기
 
 <code> git clone [fork한 원격저장소주소] .</code>     
-. 을 안붙이면 algorithm-studying이라는 파일이 생성되면서, 그안에 폴더가 생긴다.(혹시 폴더를 생성해서 그 안에 내용을 넣고싶다면 . 을 붙여라<br>
+. 을 안붙이면 CBNU-Tensor-2nd-Seminar이라는 파일이 생성되면서, 그안에 폴더가 생긴다.(혹시 폴더를 생성해서 그 안에 내용을 넣고싶다면 . 을 붙여라<br>
 클론후 생성된 파일에 `자기이름` 로 파일생성   ->여기에 코드를 넣을꺼임
 
 #### 로컬에서 개인 브랜치 생성하기
 
-local workspace에 'kwonja(예시)' 라는 이름으로 브랜치 생성<br>
-<code> git branch kwonja(예시) </code> "권자"라는 브랜치를 생성
+local workspace에 'junespring(예시)' 라는 이름으로 브랜치 생성<br>
+<code> git branch junespring(예시) </code> "junespring"아라는 브랜치를 생성
 
 clone으로 가져오면 원격 저장소가 알아서 등록이 될것이다.<br> 
 혹시나 하면 <code>git remote -v</code> 로 확인
 #### 로컬에서 브랜치 작업후 원격저장소에 반영하기(중요!)
-1. <code> **git checkout kwonja** </code> - master에서 kwonja 브랜치로 전환
+1. <code> **git checkout junespring** </code> - master에서 junespring 브랜치로 전환
 2. workspace(워킹트리)에서 작업
 3. <code> **git add "파일이름.cpp"**</code>
 4. <code> **git commit -m "message"**</code>
-5. <code> **git push origin kwonja** </code> - 원격저장소 kwonja 브랜치에 반영
+5. <code> **git push origin junespring** </code> - 원격저장소 junespring 브랜치에 반영
 6. <code> **git checkout master** </code> - 브랜치 전환
  (6번을 진행할때 폴더를 처음만들면, 브랜치가 바뀌면서, 폴더가 사라질것이다. 그런데 경로는 그대로 가지고 있어서 에러가 발생한다.(파일을 찾을수 없다고 뜸)<br>
  <code>cd ..</code>를 통해 뒤로 돌아가면 원래 master 브랜치로 이동
-7. <code> **git merge kwonja** </code> - 최신화된 master에 kwonja 브랜치 작업 반영
+7. <code> **git merge junespring** </code> - 최신화된 master에 kwonja 브랜치 작업 반영
 8. <code> **git push origin master** </code> - 원격저장소 master에 수정사항 반영
 9. PR규칙에 맞게 PR
 
