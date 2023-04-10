@@ -1,31 +1,30 @@
-#include <stdio.h>
-#pragma warning (disable:4996)
+#include <iostream>
 
-int main(void)
+using namespace std;
+
+int main()
 {
-    char word[100] = { 0 };
+	int a, b;
+	cin >> a >> b;
 
-    scanf("%s", word);
+	int n1, n2, n3;
+	n1 = a / 100;
+	n2 = (a / 10) % 10;
+	n3 = a % 10;
 
-    for (int i = 97; i <= 122; i++)
-    {
-        int j = 0;
+	int m1, m2, m3;
+	m1 = b / 100;
+	m2 = (b / 10) % 10;
+	m3 = b % 10;
 
-        while (word[j] != 0)
-        {
-            if (word[j] == (char)i)
-            {
-                break;
-            }
-            j++;
-        }
-        if (word[j] == (char)i)
-        {
-            printf("%d ", j);
-        }
-        else
-        {
-            printf("-1 ");
-        }
-    }
+	int res1, res2;
+	res1 = n3 * 100 + n2 * 10 + n1;
+	res2 = m3 * 100 + m2 * 10 + m1;
+
+	if (res1 < res2) {
+		cout << res2 << endl;
+	}
+	else if (res1 > res2) {
+		cout << res1 << endl;
+	}
 }
