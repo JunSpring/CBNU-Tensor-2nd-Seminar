@@ -5,18 +5,19 @@ using namespace std;
 class Student {
 private:
     int age;
-    string name;
-    string department;
-    string student_id;
-    string phone_number;
+    char* name;
+    char* department;
+    char* student_id;
+    char* phone_number;
 public:
-    Student(string _name);
+    Student(const char* name);
+    Student(const Student& copy);
     ~Student();
-    void setAge(int _age);
-    void setName(string _name);
-    void setDepartment(string _department);
-    void setStudentId(string _student_id);
-    void setPhoneNumber(string _phone_number);
+    void setAge(int age);
+    void setName(const char* name);
+    void setDepartment(const char* department);
+    void setStudentId(const char* student_id);
+    void setPhoneNumber(const char* phone_number);
     void printAge();
     void printName();
     void printDepartment();
