@@ -1,16 +1,11 @@
 #include <iostream>
-
+using namespace std;
 
 int main() {
-	cout << "8개 점수 입력(0~150)" << endl;
 	int p[8];//입력받은 8개 정수 배열에 넣기
 	for (int i = 0; i < 8; i++) {
 		cin >> p[i];
-		if (p[i] < 0 || p[i]>150) {
-			return 0;
-		}
 	}
-	cout << "총점" << endl;
 	int b = 0;
 	int s[5];//5개가 몇 번자리에 있는지 저장
 	for (int j = 0; j < 5; j++) {//최댓값 구하고 0으로 초기화 하고 2번째 최댓값 구하고 반복
